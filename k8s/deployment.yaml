@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: genius
+  name: oksuop
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: genius
+      app: oksuop
   template:
     metadata:
       labels:
-        app: genius
+        app: oksuop
     spec:
       containers:
-      - image: okteto.dev/genius:latest
-        name: genius
+      - image: okteto.dev/oksuop:latest
+        name: oksuop
         ports:
         - containerPort: 8080
         env:
@@ -23,12 +23,12 @@ spec:
         - name: ProxySite
           value: "mirror.umd.edu"
         - name: Vless_UUID
-          value: "56956827-9c9c-4e0b-9ff2-98abd4160d6a"
+          value: "9090dad3-9492-4e7d-8386-cb11be89ce01"
         - name: Vless_Path
-          value: "/56956827-9c9c-4e0b-9ff2-98abd4160d6a"
+          value: "/9090dad3-9492-4e7d-8386-cb11be89ce01-vless"
         - name: Vmess_UUID
-          value: "46b4f13d-79a5-4156-9c1a-c918f5314b49"
+          value: "9090dad3-9492-4e7d-8386-cb11be89ce01"
         - name: Vmess_Path
-          value: "/46b4f13d-79a5-4156-9c1a-c918f5314b49"
+          value: "/9090dad3-9492-4e7d-8386-cb11be89ce01-vmess"
         - name: Share_Path
           value: "/Share039"
